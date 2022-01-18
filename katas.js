@@ -55,3 +55,16 @@ function getOrder(input) {
   }
   return sum
 }
+
+//https://www.codewars.com/kata/54b42f9314d9229fd6000d9c/train/javascript
+
+function duplicateEncode(word) {
+  let duplicated = '';
+  for (let letter of word.toLowerCase()) {
+    word.toLowerCase().indexOf(letter) ===
+    word.toLowerCase().lastIndexOf(letter)
+      ? (duplicated += '(')
+      : (duplicated += ')');
+  }
+  return duplicated;
+}
