@@ -68,3 +68,30 @@ function duplicateEncode(word) {
   }
   return duplicated;
 }
+
+//https://www.codewars.com/kata/520b9d2ad5c005041100000f/train/javascript
+
+function pigIt(str) {
+  //Recognize the words
+  const wordsArr = str.split(' ');
+  let pigIt = '';
+  //for each word, move the first letter to the last index
+  //add 'ay' and a space
+  wordsArr.forEach((word) => {
+    if (word !== '?' && word !== '!' && word !== '.') {
+      pigIt += word.slice(1) + word[0] + 'ay' + ' ';
+    } else pigIt += word;
+  });
+  //return removing the last space
+  return pigIt.trim();
+}
+
+//more interesting solution:
+
+function pigIt(str) {
+  var arrayWord = str.split(' ');
+  return arrayWord.map(function(word) {
+    var firstLetter = word.charAt(0);
+    return word.slice(1) + firstLetter + 'ay';
+  }).join(' ');
+}
