@@ -95,3 +95,15 @@ function pigIt(str) {
     return word.slice(1) + firstLetter + 'ay';
   }).join(' ');
 }
+
+// https://www.codewars.com/kata/52597aa56021e91c93000cb0/train/javascript
+
+var moveZeros = function (arr) {
+  const newArr = [...arr];
+  newArr.forEach((e) => {
+    if (e === 0) {
+      newArr.splice(newArr.indexOf(e), 1) && newArr.push(0);
+    }
+  });
+  return newArr;
+};
