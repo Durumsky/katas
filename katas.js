@@ -107,3 +107,31 @@ var moveZeros = function (arr) {
   });
   return newArr;
 };
+
+//https://www.codewars.com/kata/52774a314c2333f0a7000688/train/javascript
+
+function validParentheses(parens) {
+  let parensArr = [];
+  for (let i = 0; i < parens.length; i++) {
+    console.log(i);
+    parensArr = parens.split('()');
+    parens = parensArr.join('');
+    parensArr = parens.split('()');
+  }
+  if (parensArr.join('').length === 0) {
+    return true;
+  } else return false;
+}
+
+//cleverer solution:
+
+function validParentheses(parens){
+  var n = 0;
+  for (var i = 0; i < parens.length; i++) {
+    if (parens[i] == '(') n++;
+    if (parens[i] == ')') n--;
+    if (n < 0) return false;
+  }
+  
+  return n == 0;
+}
