@@ -135,3 +135,15 @@ function validParentheses(parens){
   
   return n == 0;
 }
+
+//https://www.codewars.com/kata/52685f7382004e774f0001f7/train/javascript
+
+function humanReadable(seconds) {
+  let h = Math.floor(seconds / (60 * 60));
+  let m = Math.floor((seconds - h * 60 * 60) / 60);
+  let s = seconds - h * 60 * 60 - m * 60;
+  h < 10 ? (h = '0' + h) : h;
+  m < 10 ? (m = '0' + m) : m;
+  s < 10 ? (s = '0' + s) : s;
+  return `${h}:${m}:${s}`;
+}
