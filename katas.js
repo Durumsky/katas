@@ -147,3 +147,48 @@ function humanReadable(seconds) {
   s < 10 ? (s = '0' + s) : s;
   return `${h}:${m}:${s}`;
 }
+
+
+//https://www.codewars.com/kata/550f22f4d758534c1100025a/train/javascript
+
+function dirReduc(arr) {
+  const rArr = [...arr];
+
+  function reducer() {
+    for (let i = 0; i < arr.length; i++) {
+      if (
+        (rArr[i] === 'NORTH' && rArr[i + 1] === 'SOUTH') ||
+        (rArr[i] === 'SOUTH' && rArr[i + 1] === 'NORTH')
+      ) {
+        rArr.splice(i, 2);
+      } else if (
+        (rArr[i] === 'EAST' && rArr[i + 1] === 'WEST') ||
+        (rArr[i] === 'WEST' && rArr[i + 1] === 'EAST')
+      ) {
+        rArr.splice(i, 2);
+      }
+    }
+  }
+  let counter = arr.length;
+  while (counter > 0) {
+    reducer();
+    counter -= 1;
+  }
+  return rArr;
+}
+
+//other solution
+function dirReduc(arr){
+  var count = 0;
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i] === "WEST" && arr[i+1] === "EAST" ||
+        arr[i] === "EAST" && arr[i+1] === "WEST" ||
+        arr[i] === "NORTH" && arr[i+1] === "SOUTH" ||
+        arr[i] === "SOUTH" && arr[i+1] === "NORTH") {
+        arr.splice(i, 2);
+        count++;
+        i--;
+    }
+  }
+  return count === 0 ? arr : dirReduc(arr);
+}
