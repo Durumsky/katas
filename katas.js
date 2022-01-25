@@ -177,7 +177,7 @@ function dirReduc(arr) {
   return rArr;
 }
 
-//other solution
+//other solution using the ternary in the return instead of the while loop
 function dirReduc(arr){
   var count = 0;
   for (var i = 0; i < arr.length; i++) {
