@@ -192,3 +192,18 @@ function dirReduc(arr){
   }
   return count === 0 ? arr : dirReduc(arr);
 }
+
+//https://www.codewars.com/kata/523a86aa4230ebb5420001e1/train/javascript
+
+function anagrams(word, words) {
+  //check if word of words contains all the letters of word
+  //check if the letters are as many times
+  const anagramArr = [];
+  for (let item of words) {
+    if (word.split('').sort().join() === item.split('').sort().join()) {
+      anagramArr.push(item);
+    }
+  }
+
+  return anagramArr;
+}
