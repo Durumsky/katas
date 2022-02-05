@@ -250,7 +250,7 @@ function toHex(d) {
     return  ("0"+(Number(d).toString(16))).slice(-2).toUpperCase()
 }
 
-//other possible solution:
+//other possible solution, more readable:
 function rgb(r, g, b){
   function toHex(a) { 
     if (a <= 0) return '00';
