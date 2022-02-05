@@ -249,3 +249,13 @@ function toHex(d) {
     if(d > 255 ) {return "FF";}
     return  ("0"+(Number(d).toString(16))).slice(-2).toUpperCase()
 }
+
+//other possible solution:
+function rgb(r, g, b){
+  function toHex(a) { 
+    if (a <= 0) return '00';
+    else if (a >= 255) return 'FF';
+    else return a.toString(16).toUpperCase();
+  }
+  return toHex(r) + toHex(g) + toHex(b);
+}
