@@ -259,3 +259,20 @@ function rgb(r, g, b){
   }
   return toHex(r) + toHex(g) + toHex(b);
 }
+
+//https://www.codewars.com/kata/530e15517bc88ac656000716/train/javascript
+
+function rot13(message) {
+  let rotStr = '';
+  const abc = 'abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz';
+  const ABC = 'ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  for (let i = 0; i < message.length; i++) {
+    const ch = message[i];
+    if (abc.includes(ch.toLowerCase()) && ch === ch.toLowerCase()) {
+      rotStr += abc[abc.indexOf(ch) + 13];
+    } else if (abc.includes(ch.toLowerCase()) && ch === ch.toUpperCase()) {
+      rotStr += ABC[ABC.indexOf(ch) + 13];
+    } else rotStr += ch;
+  }
+  return rotStr;
+}
